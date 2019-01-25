@@ -5,7 +5,7 @@ const LayoutDefault = props => {
   return (
     <div>
       {header}
-      <main style={{ paddingTop: '70px' }}>{children}</main>
+      <main style={{ paddingTop: '3.6rem' }}>{children}</main>
       {footer}
     </div>
   );

@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+* 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+$breakpoints: (xxxl: 1920px, xxl: 1600px, xl: 1440px, lg: 1280px, md: 1024px, sm: 768px, xs: 320px)
+
+@mixin respond-to($breakpoint)
+  @media (min-width: #{map-get($breakpoints, $breakpoint)})
+    @content;
+
+
+html,
+body 
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  height: 100%;
+  width: 100%;
+  transition: font-size .2s ease-in-out
+  +respond-to(xs)
+    font-size: 12px;
+  +respond-to(sm)
+    font-size: 16px;
+  +respond-to(md) 
+    font-size: 18px;
+  +respond-to(lg) 
+    font-size: 20px;
+  +respond-to(xl)
+    font-size: 24px;
+  +respond-to(xxl)
+    font-size: 26px;
+  +respond-to(xxxl)
+    font-size: 28px;
+  > *
+    flex: 1 0 auto
+.shade 
+  position: fixed;
+  background-image: linear-gradient(to right, #000A, #FFFA);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  filter: blur(5px);
+  z-index: 999;
+
+.modal 
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 90%;
+  height: 60%;
+  z-index: 999;
+  +respond-to(xl)
+    height: 80%;

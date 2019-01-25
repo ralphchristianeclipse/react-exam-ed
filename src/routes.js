@@ -1,5 +1,7 @@
 import PageIndex from './pages/PageIndex';
-import PageList from './pages/PageList';
+import PageAnimals from './pages/PageAnimals';
+import PageFruitsAndVegetables from './pages/PageFruitsAndVegetables';
+
 export const routes = [
   {
     path: '/',
@@ -7,7 +9,11 @@ export const routes = [
     component: PageIndex
   },
   {
-    path: '/:type',
-    component: PageList
+    path: '/animals',
+    component: PageAnimals
+  },
+  {
+    path: '/fruits-and-vegetables',
+    component: PageFruitsAndVegetables
   }
 ];

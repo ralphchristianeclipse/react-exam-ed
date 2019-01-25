@@ -2,8 +2,8 @@ import { getAnimals, getFruitsAndVegetables } from '../api';
 
 const mapToType = (list, type) =>
   list.map(item => ({
-    ...item,
     id: item.Id,
+    ...item,
     __typename: type
   }));
 
