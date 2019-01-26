@@ -43,7 +43,7 @@ const Shade = posed.div({
   exit: { opacity: 0 }
 });
 
-const ModalImage = styled.img`
+const ModalImage = posed(styled.img`
   width: 100%;
   position: relative;
   height: 100%;
@@ -53,11 +53,16 @@ const ModalImage = styled.img`
   ${mobileScreens.sm} {
     height: auto;
   }
-  &:hover {
-    filter: blur(5px);
-    opacity: 0.5;
+`)({
+  unhovered: {
+    filter: 'none',
+    opacity: 1
+  },
+  hovered: {
+    filter: 'blur(5px)',
+    opacity: 0.5
   }
-`;
+});
 
 const AnimalContainer = posed.div({
   visible: {
@@ -80,10 +85,14 @@ const AnimalCard = ({ item, setAnimal, ...remaingProps }) => (
     {...remaingProps}
     key={item.id}
     style={{ margin: '10px', cursor: 'pointer' }}
-    onClick={() => setAnimal(item)}
   >
     <Flex alignContent="center">
-      <img src={item.image.thumb} alt={item.Title} />
+      <img
+        style={{ cursor: 'zoom-in' }}
+        src={item.image.thumb}
+        alt={item.Title}
+        onClick={() => setAnimal(item)}
+      />
       <div
         style={{
           padding: '.6rem',
@@ -98,11 +107,13 @@ const AnimalCard = ({ item, setAnimal, ...remaingProps }) => (
   </AnimatedCard>
 );
 
-const HoverableModalImage = (props) => {
-  const element = hovered => <ModalImage {...props} hovered={hovered} className={hovered ? 'test' : 'a'} />
-  const [hoverable, hovered] = useHover(element);
+const HoverableModalImage = props => {
+  const element = hovered => (
+    <ModalImage {...props} pose={hovered ? 'hovered' : 'unhovered'} />
+  );
+  const [hoverable] = useHover(element);
   return hoverable;
-}
+};
 
 const PageAnimals = () => {
   const { data, loading } = useQuery(Animals, { suspend: false });
@@ -117,7 +128,6 @@ const PageAnimals = () => {
     <div>
       <PoseGroup>
         {animal && [
-          // If animating more than one child, each needs a `key`
           <Shade
             key={`shade-${animal.id}`}
             className="shade"

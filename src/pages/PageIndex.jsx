@@ -2,6 +2,7 @@ import React from 'react';
 import posed, { PoseGroup } from 'react-pose';
 import { useTimeout } from 'react-use';
 import styled from '@emotion/styled';
+import { NavLink } from 'react-router-dom';
 const Container = posed(styled.div`
   place-content: center;
   display: flex;
@@ -14,7 +15,8 @@ const Container = posed(styled.div`
   }
 });
 
-const TopCurvedButton = styled.div`
+const TopCurvedButton = styled(NavLink)`
+  text-decoration: none;
   border-top-left-radius: 25%;
   border-top-right-radius: 25%;
   border-bottom-right-radius: 10px;
@@ -24,10 +26,13 @@ const TopCurvedButton = styled.div`
   font-size: 4rem;
   cursor: pointer;
   text-align: center;
+  display: block;
   margin-bottom: 1rem;
+  color: initial;
 `;
 
-const BottomCurvedButton = styled.div`
+const BottomCurvedButton = styled(NavLink)`
+  text-decoration: none;
   border-bottom-left-radius: 25%;
   border-bottom-right-radius: 25%;
   border-top-right-radius: 10px;
@@ -36,18 +41,22 @@ const BottomCurvedButton = styled.div`
   padding: 1rem;
   font-size: 4rem;
   cursor: pointer;
+  display: block;
   text-align: center;
+  color: initial;
 `;
 
-const PageIndex = () => {
+const PageIndex = props => {
   const show = useTimeout(2000);
   return (
     <PoseGroup>
       {show && [
         <Container key="test" style={{ height: 'calc(100vh - 70px)' }}>
           <div style={{ margin: 'auto' }}>
-            <TopCurvedButton>🐈🐕</TopCurvedButton>
-            <BottomCurvedButton>🍆🍅</BottomCurvedButton>
+            <TopCurvedButton to="/animals">????</TopCurvedButton>
+            <BottomCurvedButton to="/fruits-and-vegetables">
+              ????
+            </BottomCurvedButton>
           </div>
         </Container>
       ]}

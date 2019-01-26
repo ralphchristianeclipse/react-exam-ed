@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from '@emotion/styled';
 const Card = styled.div`
   box-shadow: 0px 0px 51px 0px rgba(0, 0, 0, 0.08),

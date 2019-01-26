@@ -7,8 +7,9 @@ export const screens = {
 };
 
 export const mobileScreens = Object.entries(screens).reduce(
-  (acc, [key, width]) => (
-    (acc[key] = `@media screen and (max-width: ${width}px)`), acc
-  ),
+  (acc, [key, width]) => ({
+    ...acc,
+    [key]: `@media screen and (max-width: ${width}px)`
+  }),
   {}
 );
