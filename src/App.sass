@@ -17,26 +17,28 @@ $breakpoints: (xxxl: 1920px, xxl: 1600px, xl: 1440px, lg: 1280px, md: 1024px, sm
 
 html,
 body 
-  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
   height: 100%;
   width: 100%;
-  transition: font-size .2s ease-in-out
+  background: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
   +respond-to(xs)
     font-size: 12px;
   +respond-to(sm)
-    font-size: 16px;
+    font-size: 14px;
   +respond-to(md) 
-    font-size: 18px;
+    font-size: 16px;
   +respond-to(lg) 
-    font-size: 20px;
+    font-size: 18px;
   +respond-to(xl)
-    font-size: 24px;
+    font-size: 20px;
   +respond-to(xxl)
-    font-size: 26px;
+    font-size: 22px;
   +respond-to(xxxl)
-    font-size: 28px;
+    font-size: 24px;
   > *
     flex: 1 0 auto
+
+#root
+  background: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
 .shade 
   position: fixed;
   background: #000A;

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/accessible-emoji */
 import React from 'react';
 import posed, { PoseGroup } from 'react-pose';
 import { useTimeout } from 'react-use';
@@ -29,6 +30,7 @@ const TopCurvedButton = styled(NavLink)`
   display: block;
   margin-bottom: 1rem;
   color: initial;
+  user-select: none;
 `;
 
 const BottomCurvedButton = styled(NavLink)`
@@ -44,6 +46,7 @@ const BottomCurvedButton = styled(NavLink)`
   display: block;
   text-align: center;
   color: initial;
+  user-select: none;
 `;
 
 const PageIndex = props => {
@@ -53,9 +56,9 @@ const PageIndex = props => {
       {show && [
         <Container key="test" style={{ height: 'calc(100vh - 70px)' }}>
           <div style={{ margin: 'auto' }}>
-            <TopCurvedButton to="/animals">????</TopCurvedButton>
+            <TopCurvedButton to="/animals">🐕🐈</TopCurvedButton>
             <BottomCurvedButton to="/fruits-and-vegetables">
-              ????
+              🍅🍆
             </BottomCurvedButton>
           </div>
         </Container>

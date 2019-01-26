@@ -28,30 +28,42 @@ const links = [
 ];
 
 const routerViews = getRouterViews(routes);
-const routerLinks = links.map(link => (
-  <ToolbarLink to={link.path} key={link.path}>
-    {link.name}
-  </ToolbarLink>
-));
+const RouterLinks = props =>
+  links.map(link => (
+    <ToolbarLink to={link.path} key={link.path} {...props}>
+      {link.name}
+    </ToolbarLink>
+  ));
 
 const RoutesContainer = posed.div({
-  enter: { opacity: 1 },
-  exit: { opacity: 0 }
+  enter: { opacity: 1, x: 0 },
+  exit: { opacity: 0, x: '100%' }
 });
 
-const App = ({ location }) => (
-  <LayoutDefault
-    header={location.pathname !== '/' && <Toolbar>{routerLinks}</Toolbar>}
-  >
-    <PoseGroup>
-      <RoutesContainer key={location.key || location.pathname}>
-        <Switch>
-          {routerViews}
-          <Route component={RouteNotFound} />
-        </Switch>
-      </RoutesContainer>
-    </PoseGroup>
-  </LayoutDefault>
-);
+const onRest = () => (document.body.style.overflowX = 'auto');
+const hideBodyOverflowX = () => (document.body.style.overflowX = 'hidden');
+
+const App = ({ location }) => {
+  return (
+    <LayoutDefault
+      header={
+        location.pathname !== '/' && (
+          <Toolbar>
+            <RouterLinks onClick={hideBodyOverflowX} />
+          </Toolbar>
+        )
+      }
+    >
+      <PoseGroup onRest={onRest}>
+        <RoutesContainer key={location.key || location.pathname}>
+          <Switch>
+            {routerViews}
+            <Route component={RouteNotFound} />
+          </Switch>
+        </RoutesContainer>
+      </PoseGroup>
+    </LayoutDefault>
+  );
+};
 
 export default App;

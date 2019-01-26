@@ -1,15 +1,17 @@
 export const screens = {
-  xs: 360,
-  sm: 475,
-  md: 768,
-  lg: 1024,
-  xl: 1440
+  xxxl: 1920,
+  xxl: 1600,
+  xl: 1440,
+  lg: 1280,
+  md: 1024,
+  sm: 768,
+  xs: 320
 };
 
 export const mobileScreens = Object.entries(screens).reduce(
   (acc, [key, width]) => ({
     ...acc,
-    [key]: `@media screen and (max-width: ${width}px)`
+    [key]: `@media screen and (min-width: ${width}px)`
   }),
   {}
 );

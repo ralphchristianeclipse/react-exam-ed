@@ -10,7 +10,8 @@ const ToolbarLink = styled(NavLink)`
   padding: 0px 0.5rem 0.25rem;
   border-right: 0.25rem solid #0f2027;
   border-bottom: 0.25rem solid #0f2027;
-  transition: 0.5s ease-in-out;
+  transition: border-left 0.3s ease-in-out, border-top 0.3s ease-in-out,
+    border-right 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
   border-radius: 5px;
 
   &.active {

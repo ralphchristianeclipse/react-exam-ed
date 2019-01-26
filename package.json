@@ -20,6 +20,7 @@
     "react-apollo-hooks": "^0.3.1",
     "react-dom": "^16.8.0-alpha.1",
     "react-pose": "^4.0.6",
+    "react-pose-text": "^3.1.0",
     "react-router-config": "^4.4.0-beta.6",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.3",
