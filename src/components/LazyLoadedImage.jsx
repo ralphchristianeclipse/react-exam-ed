@@ -5,19 +5,23 @@ import styled from '@emotion/styled';
 
 export const LazyLoadedImage = posed(styled.img`
   cursor: zoom-in;
+  border-right-style: solid;
+  border-right-color: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
 `)({
   hoverable: true,
   init: {
     marginRight: '0rem',
     scale: 1,
     borderTopLeftRadius: '0px',
-    borderBottomLeftRadius: '0px'
+    borderBottomLeftRadius: '0px',
+    borderRightWidth: '0px'
   },
   hover: {
     marginRight: '1rem',
     scale: 1.2,
     borderTopLeftRadius: '20px',
-    borderBottomLeftRadius: '20px'
+    borderBottomLeftRadius: '20px',
+    borderRightWidth: '5px'
   },
   loading: {
     filter: 'blur(5px)'
