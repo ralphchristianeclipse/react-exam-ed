@@ -1,9 +1,14 @@
 import React from 'react';
 
-import { Animals } from '../apollo/queries';
+import { Items } from '../apollo/queries';
 
 import { CardListQueryData } from '../components/CardListQueryData';
 
-export const PageAnimals = () => {
-  return <CardListQueryData query={Animals} extraField="CollectiveNoun" />;
-};
+const options = { variables: { type: 'Animal' } };
+export const PageAnimals = () => (
+  <CardListQueryData
+    query={Items}
+    options={options}
+    extraField="collectiveNoun"
+  />
+);

@@ -15,7 +15,7 @@ export const CardItem = ({ item, setItem, ...props }) => {
       <FlexContainer alignContent="center">
         <LazyLoadImage
           src={item.image.thumb}
-          alt={item.Title}
+          alt={item.title}
           onClick={() => setItem(item)}
         />
         <div
@@ -25,8 +25,8 @@ export const CardItem = ({ item, setItem, ...props }) => {
             overflow: 'hidden'
           }}
         >
-          <CardTitle>{item.Title}</CardTitle>
-          <Paragraph>{item.Description}</Paragraph>
+          <CardTitle>{item.title}</CardTitle>
+          <Paragraph>{item.description}</Paragraph>
         </div>
       </FlexContainer>
     </AnimatedCard>

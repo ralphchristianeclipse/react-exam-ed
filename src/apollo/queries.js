@@ -41,3 +41,28 @@ export const FruitsAndVegetables = gql`
     }
   }
 `;
+
+export const Items = gql`
+  fragment Item on Item {
+    id
+    title
+    description
+    family
+    image {
+      id
+      thumb
+      full
+    }
+  }
+  query Items($type: String!) {
+    result: items(type: $type) {
+      ...Item
+      ... on Animal {
+        collectiveNoun
+      }
+      ... on FruitAndVegetable {
+        genus
+      }
+    }
+  }
+`;

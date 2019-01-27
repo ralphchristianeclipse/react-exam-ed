@@ -75,7 +75,7 @@ export const CardModal = ({ item, onClickOverlay, extraField }) => {
           <hoverable.type
             pose={pose}
             src={item.image.full}
-            alt={item.image.Title}
+            alt={item.image.title}
             {...hoverable.props}
           />
           <Container
@@ -83,11 +83,11 @@ export const CardModal = ({ item, onClickOverlay, extraField }) => {
             pose={pose}
             largeScreen={largeScreen}
           >
-            <h1>{item.Title}</h1>
+            <h1>{item.title}</h1>
             <h4>
-              {item.Family} | {item[extraField]}
+              {item.family} | {item[extraField]}
             </h4>
-            <CardModalParagraph>{item.Description}</CardModalParagraph>
+            <CardModalParagraph>{item.description}</CardModalParagraph>
           </Container>
         </Modal>
       ]}

@@ -14,8 +14,11 @@ export const CardItems = ({ items, setCurrentItem }) =>
     <CardItem item={item} setItem={setCurrentItem} key={item.id} />
   ));
 
-export const CardListQueryData = ({ query, extraField }) => {
-  const { data, loading, error } = useQuery(query, { suspend: false });
+export const CardListQueryData = ({ query, extraField, options = {} }) => {
+  const { data, loading, error } = useQuery(query, {
+    suspend: false,
+    ...options
+  });
   const [currentItem, setCurrentItem] = useToggleValue();
   const onSetCurrentItem = item => {
     document.body.style.overflow = 'hidden';

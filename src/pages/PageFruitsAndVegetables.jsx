@@ -1,9 +1,10 @@
 import React from 'react';
 
-import { FruitsAndVegetables } from '../apollo/queries';
+import { Items } from '../apollo/queries';
 
 import { CardListQueryData } from '../components/CardListQueryData';
 
-export const PageFruitsAndVegetables = () => {
-  return <CardListQueryData query={FruitsAndVegetables} extraField="Genus" />;
-};
+const options = { variables: { type: 'FruitAndVegetable' } };
+export const PageFruitsAndVegetables = () => (
+  <CardListQueryData query={Items} options={options} extraField="genus" />
+);
