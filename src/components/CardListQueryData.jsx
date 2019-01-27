@@ -7,6 +7,7 @@ import { CardModal } from './CardModal';
 import { Loading } from './Loading';
 import { CardContainer } from './CardContainer';
 import { CardItem } from './CardItem';
+import { Error } from './Error';
 
 export const CardItems = ({ items, setCurrentItem }) =>
   items.map(item => (
@@ -14,7 +15,7 @@ export const CardItems = ({ items, setCurrentItem }) =>
   ));
 
 export const CardListQueryData = ({ query, extraField }) => {
-  const { data, loading } = useQuery(query, { suspend: false });
+  const { data, loading, error } = useQuery(query, { suspend: false });
   const [currentItem, setCurrentItem] = useToggleValue();
   const onSetCurrentItem = item => {
     document.body.style.overflow = 'hidden';
@@ -26,6 +27,7 @@ export const CardListQueryData = ({ query, extraField }) => {
   };
   const ready = useTimeout(100);
   if (loading) return <Loading />;
+  if (error) return <Error />;
   const { result } = data;
   return (
     <div>
