@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 
 import { Shade } from './Shade';
 import { Modal } from './Modal';
-import { useWindowSize, useHover, useSpeech } from 'react-use';
+import { useWindowSize, useHover } from 'react-use';
 import { ModalImage } from './ModalImage';
 
 export const CardModalContainer = styled.div`
