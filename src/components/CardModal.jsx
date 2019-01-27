@@ -60,7 +60,7 @@ export const CardModal = ({ item, onClickOverlay, extraField }) => {
   const element = <ModalImage />;
   const { width } = useWindowSize();
   const [hoverable, hovered] = useHover(element);
-  const largeScreen = width > 768;
+  const largeScreen = width >= 768;
   const isHoveredOnLargeScreens = largeScreen && hovered;
   const pose = isHoveredOnLargeScreens ? 'hovered' : 'unhovered';
   return (
