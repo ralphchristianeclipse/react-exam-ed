@@ -36,12 +36,7 @@ export const PageIndex = props => {
         >
           <div style={{ margin: 'auto', color: '#FFF', textAlign: 'center' }}>
             <h2>Animals</h2>
-            <EmoticonLink
-              to="/animals"
-              top
-              onPoseComplete={console.log}
-              alternate="😻"
-            >
+            <EmoticonLink to="/animals" top alternate="😻">
               😺
             </EmoticonLink>
             <EmoticonLink to="/fruits-and-vegetables" alternate="🍎">
