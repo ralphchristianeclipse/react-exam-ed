@@ -22,11 +22,9 @@ export const ModalImage = posed(styled(LazyLoadedImage)`
   }
 `)({
   unhovered: {
-    filter: 'blur(0px)',
-    opacity: 1
+    filter: 'blur(0px)'
   },
   hovered: {
-    filter: 'blur(5px)',
-    opacity: 0.5
+    filter: 'blur(5px)'
   }
 });

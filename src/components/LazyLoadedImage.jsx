@@ -17,7 +17,6 @@ export const LazyLoadImage = props => {
   const [loading, setLoading] = useState(true);
   const pose = loading ? 'loading' : 'loaded';
   const onLoad = () => {
-    console.log(loading);
     setLoading(false);
   };
 
