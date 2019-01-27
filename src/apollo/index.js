@@ -25,7 +25,7 @@ const fragmentMatcher = new IntrospectionFragmentMatcher({
 });
 
 const linkHttp = new HttpLink({
-  uri: 'https://k2xzw6llv5.sse.codesandbox.io/'
+  uri: 'https://csb-k2xzw6llv5-ycucsgwkfc.now.sh/'
 });
 
 const cache = new InMemoryCache({ fragmentMatcher });
