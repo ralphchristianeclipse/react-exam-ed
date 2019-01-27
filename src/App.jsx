@@ -8,13 +8,12 @@ import { LayoutDefault } from './layouts/LayoutDefault';
 
 import { Toolbar } from './components/Toolbar';
 import { ToolbarLink } from './components/ToolbarLink';
+import { RouteNotFound } from './components/RouteNotFound';
 
 /* Map All routes to a Route Component and spread the route props using spread operator */
 
 const getRouterViews = routes =>
   routes.map(route => <Route {...route} key={route.path} />);
-
-const RouteNotFound = () => <h1> 404 Not Found </h1>;
 
 const links = [
   {

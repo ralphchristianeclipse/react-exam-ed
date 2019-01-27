@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 import posed from 'react-pose';
 import { useTimeout } from 'react-use';
 
-const MarginAuto = styled.div`
+export const MarginAuto = styled.div`
   margin: auto;
 `;
 const ErrorContainer = posed(styled.div`
