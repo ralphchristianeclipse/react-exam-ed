@@ -6,6 +6,19 @@ import styled from '@emotion/styled';
 export const LazyLoadedImage = posed(styled.img`
   cursor: zoom-in;
 `)({
+  hoverable: true,
+  init: {
+    marginRight: '0rem',
+    scale: 1,
+    borderTopLeftRadius: '0px',
+    borderBottomLeftRadius: '0px'
+  },
+  hover: {
+    marginRight: '1rem',
+    scale: 1.2,
+    borderTopLeftRadius: '20px',
+    borderBottomLeftRadius: '20px'
+  },
   loading: {
     filter: 'blur(5px)'
   },
