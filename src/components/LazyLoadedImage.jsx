@@ -18,7 +18,7 @@ export const LazyLoadedImage = posed(styled.img`
   },
   hover: {
     marginRight: '1rem',
-    scale: 1.2,
+    scale: 1.1,
     borderTopLeftRadius: '20px',
     borderBottomLeftRadius: '20px',
     borderRightWidth: '5px'
