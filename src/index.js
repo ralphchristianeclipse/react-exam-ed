@@ -12,7 +12,11 @@ import * as serviceWorker from './serviceWorker';
 const Root = () => (
   <ApolloProvider client={apollo}>
     <ApolloHooksProvider client={apollo}>
-      <Router>
+      <Router
+        basename={
+          process.env.NODE_ENV === 'production' ? '/react-exam-ed' : '/'
+        }
+      >
         <Switch>
           <Route path="/" component={App} />
         </Switch>
