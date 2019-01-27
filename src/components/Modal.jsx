@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import posed from 'react-pose';
 
-const Modal = posed(styled.div`
+export const Modal = posed(styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -31,5 +31,3 @@ const Modal = posed(styled.div`
     transition: { duration: 150 }
   }
 });
-
-export default Modal;

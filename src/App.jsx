@@ -4,10 +4,10 @@ import posed, { PoseGroup } from 'react-pose';
 import './App.sass';
 import { routes } from './routes';
 
-import LayoutDefault from './layouts/LayoutDefault';
+import { LayoutDefault } from './layouts/LayoutDefault';
 
-import Toolbar from './components/Toolbar';
-import ToolbarLink from './components/ToolbarLink';
+import { Toolbar } from './components/Toolbar';
+import { ToolbarLink } from './components/ToolbarLink';
 
 /* Map All routes to a Route Component and spread the route props using spread operator */
 
@@ -36,8 +36,8 @@ const RouterLinks = props =>
   ));
 
 const RoutesContainer = posed.div({
-  enter: { opacity: 1, x: 0 },
-  exit: { opacity: 0, x: '100%' }
+  enter: { opacity: 1 },
+  exit: { opacity: 0 }
 });
 
 const onRest = () => (document.body.style.overflowX = 'auto');
@@ -46,6 +46,7 @@ const hideBodyOverflowX = () => (document.body.style.overflowX = 'hidden');
 const App = ({ location }) => {
   return (
     <LayoutDefault
+      location={location}
       header={
         location.pathname !== '/' && (
           <Toolbar>

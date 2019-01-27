@@ -1,18 +1,12 @@
 import React from 'react';
-import { useHover } from 'react-use';
-import ModalImage from './ModalImage';
+import { useHover, useWindowSize } from 'react-use';
+import { ModalImage } from './ModalImage';
 
-const HoverableModalImage = ({ onHover, ...remainingProps }) => {
+export const HoverableModalImage = ({ onHover, ...props }) => {
   const element = <ModalImage />;
+  const { width } = useWindowSize();
   const [hoverable, hovered] = useHover(element);
+  const pose = width > 768 && hovered ? 'hovered' : 'unhovered';
   if (typeof onHover === 'function') onHover(hovered);
-  return (
-    <hoverable.type
-      {...hoverable.props}
-      {...remainingProps}
-      pose={hovered ? 'hovered' : 'unhovered'}
-    />
-  );
+  return <hoverable.type {...hoverable.props} {...props} pose={pose} />;
 };
-
-export default HoverableModalImage;

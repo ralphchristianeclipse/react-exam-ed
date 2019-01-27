@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-const Paragraph = styled.p`
+export const Paragraph = styled.p`
   text-align: justify;
   margin: auto;
   overflow: hidden;
@@ -8,5 +8,3 @@ const Paragraph = styled.p`
   white-space: nowrap;
   font-size: 0.8rem;
 `;
-
-export default Paragraph;

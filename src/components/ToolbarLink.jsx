@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import styled from '@emotion/styled';
 
-const ToolbarLink = styled(NavLink)`
+export const ToolbarLink = styled(NavLink)`
   text-decoration: none;
   color: #fff;
   text-transform: uppercase;
@@ -21,5 +21,3 @@ const ToolbarLink = styled(NavLink)`
     border-bottom: 0;
   }
 `;
-
-export default ToolbarLink;

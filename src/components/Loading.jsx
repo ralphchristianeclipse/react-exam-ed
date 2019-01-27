@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 import posed from 'react-pose';
 import { useToggleTimeout } from '../hooks';
 
-const Centered = styled.div`
+export const Centered = styled.div`
   display: flex;
   height: calc(100vh - 100px);
   width: 100%;
@@ -13,7 +13,7 @@ const Centered = styled.div`
   font-size: 4rem;
 `;
 
-const AnimatedTextScale = posed(styled.div`
+export const AnimatedTextScale = posed(styled.div`
   display: inline-block;
   transform-origin: center;
   height: fit-content;
@@ -36,7 +36,7 @@ const AnimatedTextScale = posed(styled.div`
 });
 const emoticons = Array.from('🍅🍆🐈🐕');
 
-const AnimatedEmoticons = memo(({ on }) => {
+export const AnimatedEmoticons = memo(({ on }) => {
   const emoticonElements = emoticons.map((char, index) => (
     <AnimatedTextScale
       key={index}
@@ -49,10 +49,8 @@ const AnimatedEmoticons = memo(({ on }) => {
   return <div style={{ margin: 'auto' }}>{emoticonElements}</div>;
 });
 
-const Loading = memo(() => {
+export const Loading = memo(() => {
   const on = useToggleTimeout(emoticons.length * 400);
-
-  document.body.style.overflowY = on ? 'hidden' : 'auto';
 
   return (
     <Centered>
@@ -60,5 +58,3 @@ const Loading = memo(() => {
     </Centered>
   );
 });
-
-export default Loading;

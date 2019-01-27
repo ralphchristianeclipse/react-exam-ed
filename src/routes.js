@@ -1,6 +1,6 @@
-import PageIndex from './pages/PageIndex';
-import PageAnimals from './pages/PageAnimals';
-import PageFruitsAndVegetables from './pages/PageFruitsAndVegetables';
+import { PageIndex } from './pages/PageIndex';
+import { PageAnimals } from './pages/PageAnimals';
+import { PageFruitsAndVegetables } from './pages/PageFruitsAndVegetables';
 
 export const routes = [
   {

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import posed from 'react-pose';
 
-const Shade = posed(styled.div`
+export const Shade = posed(styled.div`
   position: fixed;
   background: #000a;
   top: 0;
@@ -15,4 +15,3 @@ const Shade = posed(styled.div`
   enter: { opacity: 1 },
   exit: { opacity: 0 }
 });
-export default Shade;

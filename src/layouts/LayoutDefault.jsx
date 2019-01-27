@@ -1,14 +1,11 @@
 import React from 'react';
 
-const LayoutDefault = props => {
-  const { header, footer, children } = props;
-  return (
-    <div>
-      {header}
-      <main style={{ paddingTop: '3.6rem' }}>{children}</main>
-      {footer}
-    </div>
-  );
-};
-
-export default LayoutDefault;
+export const LayoutDefault = ({ header, footer, children, location }) => (
+  <div>
+    {header}
+    <main style={{ paddingTop: location.pathname !== '/' ? '3.6rem' : '0px' }}>
+      {children}
+    </main>
+    {footer}
+  </div>
+);

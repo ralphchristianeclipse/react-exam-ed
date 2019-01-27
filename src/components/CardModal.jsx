@@ -1,19 +1,20 @@
 import React from 'react';
 import { PoseGroup } from 'react-pose';
-import Shade from './Shade';
-import Modal from './Modal';
-import HoverableModalImage from './HoverableModalImage';
 import styled from '@emotion/styled';
 
-const CardModalContainer = styled.div`
+import { Shade } from './Shade';
+import { Modal } from './Modal';
+import { HoverableModalImage } from './HoverableModalImage';
+
+export const CardModalContainer = styled.div`
   text-align: center;
   padding: 1rem;
 `;
-const CardModalParagraph = styled.div`
+export const CardModalParagraph = styled.div`
   padding: 0.5rem;
   text-align: justify;
 `;
-const CardModal = ({ item, onClickOverlay }) => {
+export const CardModal = ({ item, onClickOverlay, extraField }) => {
   return (
     <PoseGroup>
       {item && [
@@ -27,7 +28,7 @@ const CardModal = ({ item, onClickOverlay }) => {
           <CardModalContainer>
             <h1>{item.Title}</h1>
             <h4>
-              {item.Family} | {item.CollectiveNoun || item.Genus}
+              {item.Family} | {item[extraField]}
             </h4>
             <CardModalParagraph>{item.Description}</CardModalParagraph>
           </CardModalContainer>
@@ -36,5 +37,3 @@ const CardModal = ({ item, onClickOverlay }) => {
     </PoseGroup>
   );
 };
-
-export default CardModal;

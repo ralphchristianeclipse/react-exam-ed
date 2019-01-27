@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
 import posed from 'react-pose';
 import { mobileScreens } from '../screens';
+import { LazyLoadedImage } from './LazyLoadedImage';
 
-const ModalImage = posed(styled.img`
+export const ModalImage = posed(styled(LazyLoadedImage)`
   width: 100%;
   position: relative;
   height: 100%;
@@ -10,6 +11,8 @@ const ModalImage = posed(styled.img`
   transition: 0.5s ease-in-out;
   cursor: pointer;
   border-bottom: 4px solid #000;
+  min-width: 300px;
+  min-height: auto;
   ${mobileScreens.xs} {
     height: auto;
   }
@@ -27,5 +30,3 @@ const ModalImage = posed(styled.img`
     opacity: 0.5
   }
 });
-console.log(ModalImage);
-export default ModalImage;

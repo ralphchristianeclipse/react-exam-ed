@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-const ToolbarContainer = styled.div`
+export const ToolbarContainer = styled.div`
   display: flex;
   place-content: center;
   background-image: linear-gradient(to right, #0f2027, #203a43, #2c5364);
@@ -12,9 +12,6 @@ const ToolbarContainer = styled.div`
   z-index: 10;
 `;
 
-const Toolbar = props => {
-  const { children } = props;
-  return <ToolbarContainer>{children}</ToolbarContainer>;
-};
-
-export default Toolbar;
+export const Toolbar = ({ children, ...props }) => (
+  <ToolbarContainer>{children}</ToolbarContainer>
+);

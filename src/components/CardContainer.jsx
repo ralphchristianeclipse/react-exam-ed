@@ -2,7 +2,7 @@ import { mobileScreens } from '../screens';
 import posed from 'react-pose';
 import styled from '@emotion/styled';
 
-const CardContainer = posed(styled.div`
+export const CardContainer = posed(styled.div`
   ${mobileScreens.sm} {
     margin: 0 auto;
     width: 60%;
@@ -17,5 +17,3 @@ const CardContainer = posed(styled.div`
     delay: 300
   }
 });
-
-export default CardContainer;
