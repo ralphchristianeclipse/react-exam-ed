@@ -16,6 +16,14 @@ export const CardItems = ({ items, setCurrentItem }) =>
 export const CardListQueryData = ({ query, extraField }) => {
   const { data, loading } = useQuery(query, { suspend: false });
   const [currentItem, setCurrentItem] = useToggleValue();
+  const onSetCurrentItem = item => {
+    document.body.style.overflow = 'hidden';
+    setCurrentItem(item);
+  };
+  const onClickOverlay = () => {
+    document.body.style.overflow = 'auto';
+    setCurrentItem();
+  };
   const ready = useTimeout(100);
   if (loading) return <Loading />;
   const { result } = data;
@@ -23,11 +31,11 @@ export const CardListQueryData = ({ query, extraField }) => {
     <div>
       <CardModal
         item={currentItem}
-        onClickOverlay={() => setCurrentItem()}
+        onClickOverlay={onClickOverlay}
         extraField={extraField}
       />
       <CardContainer pose={ready ? 'visible' : 'hidden'}>
-        <CardItems items={result} setCurrentItem={setCurrentItem} />
+        <CardItems items={result} setCurrentItem={onSetCurrentItem} />
       </CardContainer>
     </div>
   );
